@@ -2,26 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 0 0% 0%; /* #000000 for high contrast text */
+    --card: 0 0% 100%; /* #FFFFFF for card backgrounds */
+    --card-foreground: 0 0% 0%; /* #000000 */
+    --popover: 0 0% 100%; /* #FFFFFF for popover backgrounds */
+    --popover-foreground: 0 0% 0%; /* #000000 */
+    --primary: 214 100% 40%; /* #0044CC - main blue color */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF for text on blue */
+    --secondary: 0 0% 96.1%; /* #F5F5F5, light gray for subtle areas */
+    --secondary-foreground: 0 0% 0%; /* #000000 for high contrast on gray */
+    --muted: 0 0% 96.1%; /* #F5F5F5 for muted backgrounds */
+    --muted-foreground: 0 0% 40%; /* #666666 - softer text color */
+    --accent: 214 100% 40%; /* #0044CC as an accent */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+    --destructive: 0 84.2% 60.2%; /* red, e.g., #FF4D4D for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+    --border: 0 0% 89.8%; /* #E5E5E5 as border */
+    --input: 0 0% 89.8%; /* #E5E5E5 as input background */
+    --ring: 214 100% 40%; /* #0044CC for focus rings */
+    --chart-1: 197 100% 40%; /* shade of blue, similar to primary */
+    --chart-2: 160 10% 40%; /* soft gray tone */
+    --chart-3: 197 5% 24%; /* slightly darker gray */
+    --chart-4: 43 74% 66%; /* yellow/gold for highlights */
+    --chart-5: 27 87% 67%; /* orange for highlights */
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%; /* #0A0A0A - very dark for background */
+    --foreground: 0 0% 98%; /* #FFFFFF for text */
+    --card: 0 0% 5%; /* #121212, slightly lighter than background */
+    --card-foreground: 0 0% 98%; /* #FFFFFF */
+    --popover: 0 0% 5%; /* #121212 */
+    --popover-foreground: 0 0% 98%; /* #FFFFFF */
+    --primary: 214 100% 60%; /* #0044CC, slightly brighter blue for contrast */
+    --primary-foreground: 0 0% 98%; /* #FFFFFF */
+    --secondary: 0 0% 14.9%; /* #262626, dark gray */
+    --secondary-foreground: 0 0% 98%; /* #FFFFFF */
+    --muted: 0 0% 14.9%; /* #262626 */
+    --muted-foreground: 0 0% 63.9%; /* #A6A6A6, muted text */
+    --accent: 214 100% 60%; /* #0044CC */
+    --accent-foreground: 0 0% 98%; /* #FFFFFF */
+    --destructive: 0 62.8% 50%; /* #D32F2F, dark red */
+    --destructive-foreground: 0 0% 98%; /* #FFFFFF */
+    --border: 0 0% 14.9%; /* #262626 */
+    --input: 0 0% 14.9%; /* #262626 */
+    --ring: 214 100% 60%; /* #0044CC */
+    --chart-1: 214 80% 50%; /* shade of blue */
+    --chart-2: 160 10% 45%; /* soft gray tone */
+    --chart-3: 30 80% 55%; /* orange/yellow accent */
+    --chart-4: 280 65% 60%; /* purple for diversity */
+    --chart-5: 340 75% 55%; /* pink for variety */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
