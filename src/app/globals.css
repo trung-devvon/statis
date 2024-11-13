@@ -6,13 +6,102 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  .text-linear-1 {
+    @apply bg-linear-1 text-transparent bg-clip-text;
+  }
+  .title-1 {
+    @apply text-[32px] md:text-[48px] lg:text-[48px];
+  }
 }
+
+.scrollbar-main::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+.scrollbar-main::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+/* Handle */
+.scrollbar-main::-webkit-scrollbar-thumb {
+  background: #e7e7e7;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.scrollbar-main::-webkit-scrollbar-thumb:hover {
+  background: #acacac;
+}
+
+.menu-item {
+  position: relative;
+  padding: 0.5rem;
+}
+
+.menu-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 20px;
+  width: 100%;
+  background: linear-gradient(to right, #22d1ee, #3d5af1);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.menu-item-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 20px;
+  width: 100%;
+  background: linear-gradient(to right, #22d1ee, #3d5af1);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover::after {
+  transform: scaleX(1);
+}
+.menu-item-active::after {
+  transform: scaleX(1);
+}
+.shadow-1 {
+  box-shadow: 0px 8px 18px -4px #0c31311a;
+}
+
+/* bg box */
+.bg-box {
+  background-image: url("/assets/bg-box.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.bg-grid {
+  background-image: 
+    url('/assets/grid.png'),
+    url('/assets/bg-box.png');
+  background-position: 
+    center top, 
+    center bottom;
+  background-repeat: 
+    no-repeat, 
+    no-repeat;
+  background-size: 
+    cover, 
+    cover;
+}
+
 
 @layer base {
   :root {

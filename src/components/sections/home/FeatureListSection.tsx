@@ -3,75 +3,54 @@ import { FiBox } from "react-icons/fi";
 import { IoChevronForwardSharp } from "react-icons/io5";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { features, imageBrands } from "@/utils/constants/home";
 
 const FeatureListSection = () => {
   return (
-    <div className="px-[64px] my-20 flex flex-col gap-10 py-20 bg-white">
-      <div className="flex gap-8 my-20 md:flex-wrap sm:flex-wrap flex-wrap">
-        <div className="flex-1">
-          <h2
-            style={{
-              marginBlockStart: 0,
-              marginBlockEnd: 0,
-            }}
-            className="text-[40px] font-bold leading-tight md:text-[40px] sm:text-[40px]"
-          >
-            Discover Our Comprehensive Data Solutions Tailored for Your Business
-            Needs
-          </h2>
-        </div>
-        <div className="flex-1 py-2">
-          <div className="desc flex flex-col gap-6">
-            <span className="font-normal text-[18px]">
-              Our services empower businesses with actionable insights derived
-              from robust data analysis. We specialize in industry analysis,
-              business data management, and import-export data analytics.
-              Leverage our expertise to drive informed decision-making and
-              enhance your competitive edge.
-            </span>
-          </div>
-        </div>
+    <div className="bg-grid w-full py-10 md:py-20">
+      <h2 className="text-gray-600 text-center text-2xl md:text-3xl font-bold">
+        We Offer Only Our Best
+      </h2>
+      <p className="text-gray-500 w-full md:w-3/4 lg:w-2/4 mx-auto my-6 md:my-10 text-center">
+        We are committed to excellence in everything we produce, ensuring that
+        every solution we offer meets the highest standards of quality,
+        reliability, and impact.
+      </p>
+      <div className="w-full flex flex-col lg:flex-row flex-wrap justify-center items-center gap-2">
+        {features.map((item) => {
+          const Icon = item.icon;
+          return (
+            <div
+              className="flex flex-col bg-white border border-blue-main w-2/3 sm:w-4/5 md:w:1/2 lg:w-2/3 xl:w-[30%] 2xl:w-[30%] rounded-lg p-5 min-h-[320px]"
+              key={item.title}
+            >
+              <span className="bg-blue-main size-[42px] rounded-full flex items-center justify-center">
+                <Icon size={28} color="white" />
+              </span>
+              <h3 className="text-lg font-semibold my-5">{item.title}</h3>
+              <p className="text-black-18 text-base">{item.desc}</p>
+            </div>
+          );
+        })}
       </div>
-      <div className="flex flex-col gap-6 md:flex-row md:gap-3">
-        <div className="flex-1 my-10 flex flex-col gap-6">
-          <FiBox size={28} />
-          <h3 className="text-2xl font-bold">
-            Unlock the Power of Data for Strategic Business Growth
-          </h3>
-          <span className="text-xs">
-            Transform your data into a strategic asset.
-          </span>
-          <Link className="flex items-center gap-2" href="#">
-            <span>Learn more</span>
-            <IoChevronForwardSharp />
-          </Link>
-        </div>
-        <div className="flex-1 my-10 flex flex-col gap-6">
-          <FiBox size={28} />
-          <h3 className="text-2xl font-bold">
-          Tailored Solutions for Import-Export Data Analysis and Insights
-          </h3>
-          <span className="text-xs">
-          Gain clarity and insight into your trade data.
-          </span>
-          <Link className="flex items-center gap-2" href="#">
-            <span>Discover</span>
-            <IoChevronForwardSharp />
-          </Link>
-        </div>
-        <div className="flex-1 my-10 flex flex-col gap-6">
-          <FiBox size={28} />
-          <h3 className="text-2xl font-bold">
-          Comprehensive Industry Analysis to Stay Ahead of the Competition
-          </h3>
-          <span className="text-xs">
-          Stay informed with our detailed industry reports and insights.
-          </span>
-          <Link className="flex items-center gap-2" href="#">
-            <span>Get Started</span>
-            <IoChevronForwardSharp />
-          </Link>
-        </div>
+      <h3 className="text-center text-3xl font-bold my-20 mx-auto w-1/2">
+        <span>More than 5,000+ companies trusted</span>{" "}
+        <span className="text-blue-main">StatisHub</span>{" "}
+        <span className="text-yellow-main">Solutions</span>
+      </h3>
+      <div className="bg-yellow-main w-full flex flex-wrap gap-20 justify-center items-center py-5">
+        {imageBrands.map((item) => (
+          <div key={item} className="w-28 h-20">
+            <Image
+              src={item}
+              width={100}
+              height={80}
+              className="size-full object-contain"
+              alt="brands"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

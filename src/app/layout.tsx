@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Header from "@/components/layouts/Header";
+import Header from "@/components/layouts/Header/Header";
 import localFont from "next/font/local";
 import "./globals.css";
 import 'swiper/css';

@@ -1,0 +1,10 @@
+.item-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  position: absolute;
+}
+.menu-dropdown-pr:hover .item-dropdown {
+  opacity: 1;
+  visibility: visible;
+}
