@@ -17,19 +17,19 @@ const FeatureListSection = () => {
         every solution we offer meets the highest standards of quality,
         reliability, and impact.
       </p>
-      <div className="w-full flex flex-col lg:flex-row flex-wrap justify-center items-center gap-2">
+      <div className="w-full flex flex-col lg:flex-row flex-wrap justify-center items-center gap-4">
         {features.map((item) => {
           const Icon = item.icon;
           return (
             <div
-              className="flex flex-col bg-white border border-blue-main w-2/3 sm:w-4/5 md:w:1/2 lg:w-2/3 xl:w-[30%] 2xl:w-[30%] rounded-lg p-5 min-h-[320px]"
+              className="flex hover:shadow-xl flex-col bg-white border border-blue-main w-2/3 sm:w-4/5 md:w:1/2 lg:w-2/3 xl:w-[27%] 2xl:w-[27%] rounded-lg p-5 min-h-[260px]"
               key={item.title}
             >
               <span className="bg-blue-main size-[42px] rounded-full flex items-center justify-center">
                 <Icon size={28} color="white" />
               </span>
-              <h3 className="text-lg font-semibold my-5">{item.title}</h3>
-              <p className="text-black-18 text-base">{item.desc}</p>
+              <h3 className="text-md font-semibold my-3">{item.title}</h3>
+              <p className="text-black-18 text-[14px] leading-5">{item.desc}</p>
             </div>
           );
         })}

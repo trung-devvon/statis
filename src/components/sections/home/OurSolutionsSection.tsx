@@ -39,7 +39,7 @@ const OurSolutionsSection = () => {
           <TabsContent
             key={item.tab}
             value={item.tab}
-            className="mt-8 motion-preset-expand "
+            className="mt-8 motion-preset-expand aspect-auto"
           >
             <div className="flex flex-col p-10 shadow-1 rounded-xl bg-white">
               <div className="flex gap-20">
@@ -66,20 +66,26 @@ const OurSolutionsSection = () => {
                     {item.title}
                   </h3>
                   <p className="text-gray-700">{item.desc}</p>
-                  <Button size={'lg'} className="bg-black-19 text-white flex items-center mx-auto my-5 rounded-full">
+                  <div className="flex flex-wrap my-10 gap-5">
+                {item.contents.map((p) => (
+                  <div key={p} className="rounded-full flex items-center gap-3">
+                    <span className="flex items-center justify-center size-[28px] bg-yellow-main text-black-18 rounded-full">
+                      <FaCheck />
+                    </span>
+                    <span className="text-black-18">{p}</span>
+                  </div>
+                ))}
+              </div>
+                  <Button
+                    size={"lg"}
+                    className="bg-black-19 text-white flex items-center mx-auto my-5 rounded-full"
+                  >
                     <span>Discovery</span>
                     <IoIosArrowRoundForward />
                   </Button>
                 </div>
               </div>
-                <div className="w-3/4 flex flex-wrap my-10 gap-5">
-                    {item.contents.map(p => (
-                        <div key={p} className="rounded-full flex items-center gap-3">
-                        <span className="flex items-center justify-center size-[35px] bg-yellow-200 text-black-18 rounded-full"><FaCheck /></span>
-                        <span className="text-black-18">{p}</span>
-                    </div>
-                    ))}
-                </div>
+              
             </div>
           </TabsContent>
         ))}
