@@ -10,6 +10,9 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
   .text-linear-1 {
     @apply bg-linear-1 text-transparent bg-clip-text;
   }
@@ -78,6 +81,9 @@ body {
 .shadow-1 {
   box-shadow: 0px 8px 18px -4px #0c31311a;
 }
+.shadow-2 {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 
 /* bg box */
 .bg-box {
@@ -100,6 +106,74 @@ body {
   background-size: 
     cover, 
     cover;
+}
+
+
+
+/* res list */
+.res-item {
+  box-sizing: border-box;
+}
+
+.res-list-3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  --gap: 10px; /* Giá trị mặc định cho khoảng cách */
+}
+
+.res-list-3 .res-item {
+  flex: 0 1 calc(33.33% - var(--gap)); /* 3 cột với khoảng cách giữa các cột */
+  margin-bottom: var(--gap);
+}
+
+/* Bố cục 4 cột */
+.res-list-4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  --gap: 10px; /* Giá trị mặc định cho khoảng cách */
+}
+
+.res-list-4 .res-item {
+  flex: 0 1 calc(25% - var(--gap)); /* 4 cột với khoảng cách giữa các cột */
+  margin-bottom: var(--gap);
+}
+
+/* Responsive cho tablet và mobile */
+@media (max-width: 768px) {
+  .res-list-3 .res-item,
+  .res-list-4 .res-item {
+      flex: 0 1 100%; /* 1 cột trên mobile */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .res-list-3 .res-item,
+  .res-list-4 .res-item {
+      flex: 0 1 calc(50% - var(--gap)); /* 2 cột trên tablet */
+  }
+}
+
+/* Các lớp cho khoảng cách giữa các item */
+.space-item-1 {
+  --gap: 5px; /* Khoảng cách 5px */
+}
+
+.space-item-2 {
+  --gap: 10px; /* Khoảng cách 10px */
+}
+
+.space-item-3 {
+  --gap: 15px; /* Khoảng cách 15px */
+}
+
+.space-item-4 {
+  --gap: 20px; /* Khoảng cách 20px */
+}
+
+.space-item-5 {
+  --gap: 25px; /* Khoảng cách 25px */
 }
 
 

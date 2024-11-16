@@ -42,17 +42,18 @@ const Search = () => {
   }, [debouncedSearch]);
   return (
     <>
-      <div className="w-full h-[350px]">
+      <div className="w-full">
         <div
           style={{
-            background: 'url("/image.png")',
+            background: 'url("/assets/request-bg-demo.png"), #181818',
             backgroundSize: "cover",
+            backgroundPosition: 'center',
             backgroundRepeat: "no-repeat",
           }}
-          className="flex justify-center items-center z-20 w-full h-full"
+          className="flex justify-center bg-black-18 items-center z-20 w-full h-full py-[200px]"
         >
           <div className="w-1/2 relative">
-            <p className="text-xl text-blue-700 font-semibold text-center">
+            <p className="text-3xl text-white font-semibold text-center">
               Business Directory
             </p>
             <h1 className="my-10 text-center text-white text-2xl border-2 p-2 border-white bg-gray-500/10 font-bold">

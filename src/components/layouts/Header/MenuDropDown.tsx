@@ -25,7 +25,7 @@ const DropdownMenuItem = ({ item, isScrolled, pathname }: any) => {
           <Link
             href={item.path}
             className={cn(
-              "font-semibold capitalize text-white relative hover:text-linear-1 transition text-[18px] flex items-center gap-2",
+              "font-semibold capitalize text-white relative hover:text-linear-1 transition text-[16px] flex items-center gap-2",
               pathname === item.path && "text-linear-1",
               pathname !== item.path && isScrolled && "text-black-18"
             )}
@@ -64,7 +64,7 @@ const DropdownMenuItem = ({ item, isScrolled, pathname }: any) => {
                 >
                   <div className="flex items-center gap-4">
                     <span className="flex items-center justify-center size-12 rounded-full bg-blue-main">
-                      <IconComponent className="text-white" />
+                      <IconComponent size={24} className="text-white" />
                     </span>
                     <div className="flex flex-col">
                       <span className="text-lg font-semibold">

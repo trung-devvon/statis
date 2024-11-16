@@ -15,7 +15,7 @@ const HeroHeaderSection = () => {
           alt="test"
         />
       </div>
-      <div className="absolute w-4/5 h-1/2 bottom-0 left-1/2 -translate-x-1/2 z-10 flex items-center justify-center" style={{ aspectRatio: '1 / 1' }}>
+      <div className="absolute w-full h-full bottom-0 left-1/2 -translate-x-1/2 z-10 flex items-center justify-center" style={{ aspectRatio: '1 / 1' }}>
         <Image
           draggable="false"
           src="/assets/charthero.png"

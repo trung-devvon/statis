@@ -12,10 +12,14 @@ const config: Config = {
     extend: {
       colors: {
         "blue-main": "#3247E6",
+        "blue-second": "#006EE6",
+        "blue-tertiary": "#006EE6",
         "black-18": "#181818",
         "black-19": "#191919",
         'yellow-main': '#EAB300',
+        'yellow-second': '#FFD200',
         mark: "#C5FF55",
+        'pink-1': "#F871FB",
         "layer-gray": "#ECEEF2",
         "desc-gray": "#ECEEF2",
         background: "hsl(var(--background))",
